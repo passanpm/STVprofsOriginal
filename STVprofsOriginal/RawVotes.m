@@ -52,8 +52,13 @@
     if (self = [super init]) {
         votingData = [[NSMutableArray alloc] initWithCapacity:6];
         
-       // NSString *filePath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"test3.txt"];
-        NSString *fileContents = [NSString  stringWithContentsOfFile:@"/Users/macadmin/Documents/Programming/STVprofs/STVprofsOriginal/STVprofsOriginal/test3.txt" encoding:NSUTF8StringEncoding error:NULL];
+        //The raw voting data is hard-coded into this program for ease of use
+        NSString *fileContents = @"Blaha Dijkstra Hauser Murphy Wolff\nWolff Hauser Dijkstra Murphy Blaha\nBlaha Hauser Dijkstra Murphy Wolff\nMurphy Blaha Dijkstra Hauser Wolff\nBlaha Hauser Murphy Wolff Dijkstra\nWolff Blaha Dijkstra Hauser Murphy\nDijkstra Blaha Hauser Murphy Wolff\nHauser Blaha Dijkstra Murphy Wolff";
+        
+        //This takes raw voting data from a text file and puts it into NSString fileContents
+        //Note: Must give this the entire file path for it to work
+        /* NSString *fileContents = [NSString  stringWithContentsOfFile:@"/Users/macadmin/Documents/Programming/STVprofs/STVprofsOriginal/STVprofsOriginal/test3.txt" encoding:NSUTF8StringEncoding error:NULL]; */
+        
         if (fileContents) {
             results = fileContents;
         }
